@@ -1,0 +1,4 @@
+intervention_category,treatment_n,control_n,treatment_outcome_rate,control_outcome_rate,ate,relative_effect,standard_error,ci_lower,ci_upper
+LIQUIDITY_PROTECTION,23,24,0.17391304347826086,0.25,-0.07608695652173914,-0.30434782608695654,0.12117138930107257,-0.3135828795518414,0.16140896650836312
+OBLIGATION_MANAGEMENT,17,13,0.0,0.0,0.0,,0.0,0.0,0.0
+SPENDING_CONTROL,5,6,0.0,0.0,0.0,,0.0,0.0,0.0

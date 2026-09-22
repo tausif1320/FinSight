@@ -1,0 +1,112 @@
+# ============================================================
+# FinSight Synthetic Data Generation Configuration
+# ============================================================
+
+population:
+  n_users: 10000
+  n_months: 12
+  random_seed: 42
+
+  age:
+    min: 21
+    max: 55
+    mean: 29
+    std: 6
+
+  city_tier:
+    tier_1: 0.45
+    tier_2: 0.35
+    tier_3: 0.20
+
+  employment_type:
+    private: 0.75
+    government: 0.15
+    other_salaried: 0.10
+
+
+income:
+  minimum: 20000
+  maximum: 250000
+
+  stability:
+    alpha: 8
+    beta: 2
+
+  monthly_noise:
+    minimum: 0.02
+    maximum: 0.14
+
+  annual_raise_probability: 0.15
+  annual_raise_min: 0.05
+  annual_raise_max: 0.15
+
+  bonus_probability: 0.10
+
+
+obligations:
+  rent_probability: 0.80
+  emi_probability: 0.45
+
+  rent_ratio:
+    alpha: 5
+    beta: 15
+
+  emi_ratio:
+    alpha: 3
+    beta: 12
+
+  utilities_ratio:
+    alpha: 2
+    beta: 30
+
+  subscription_lambda: 2
+  max_subscriptions: 6
+
+
+behavior:
+  spending_propensity:
+    alpha: 4
+    beta: 4
+
+  savings_noise_std: 0.10
+
+  essential_ratio:
+    alpha: 6
+    beta: 4
+
+  discretionary_ratio:
+    alpha: 3
+    beta: 7
+
+  weekend_multiplier_min: 1.2
+  weekend_multiplier_max: 1.5
+
+
+transactions:
+  mean_daily_transactions:
+    low: 1.5
+    medium: 3.0
+    high: 5.0
+
+  transaction_amount:
+    distribution: lognormal
+
+
+shocks:
+  monthly_probability: 0.03
+
+  medical: 0.20
+  travel: 0.20
+  large_purchase: 0.25
+  emergency: 0.20
+  unexpected_bill: 0.15
+
+
+initial_balance:
+  min_buffer_months: 0.10
+  max_buffer_months: 2.50
+
+
+validation:
+  minimum_users: 100
+  maximum_missing_rate: 0.01

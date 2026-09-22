@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        FinSight | Financial Intelligence
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =========================================================
+         SIDEBAR
+         ========================================================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    FinSight
+                </div>
+
+                <div class="brand-subtitle">
+                    Predictive Financial Intelligence
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-section">
+
+            <div class="sidebar-label">
+                ANALYSIS CONTROLS
+            </div>
+
+
+            <label for="userSelect">
+                User
+            </label>
+
+            <select id="userSelect">
+
+                <option value="">
+                    Loading users...
+                </option>
+
+            </select>
+
+
+            <label for="monthSelect">
+                Observation Month
+            </label>
+
+            <select id="monthSelect">
+
+                <option value="">
+                    Select month
+                </option>
+
+            </select>
+
+
+            <button
+                id="analyzeButton"
+                class="primary-button"
+            >
+                Analyze Financial State
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="system-card">
+
+                <div class="system-title">
+                    SYSTEM
+                </div>
+
+                <div class="system-status">
+
+                    <span class="status-dot"></span>
+
+                    API CONNECTED
+
+                </div>
+
+                <div class="system-stack">
+                    Calibrated HGB · SHAP · CATE
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="page-title">
+                    Financial Intelligence
+                </div>
+
+                <div class="page-subtitle">
+                    Understand behavior. Predict financial stress.
+                    Personalize intervention.
+                </div>
+
+            </div>
+
+
+            <div class="live-badge">
+
+                <span class="status-dot"></span>
+
+                LIVE ENGINE
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             FINANCIAL OVERVIEW
+             ===================================================== -->
+
+        <section>
+
+            <div class="section-header">
+                Financial Overview
+            </div>
+
+
+            <div class="kpi-grid">
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-label">
+                        30-DAY STRESS RISK
+                    </div>
+
+                    <div
+                        id="riskProbability"
+                        class="kpi-value green"
+                    >
+                        --
+                    </div>
+
+                    <div class="kpi-description">
+                        Probability of financial stress
+                    </div>
+
+                </div>
+
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-label">
+                        RISK LEVEL
+                    </div>
+
+                    <div
+                        id="riskLevel"
+                        class="kpi-value"
+                    >
+                        --
+                    </div>
+
+                    <div class="kpi-description">
+                        Model-calibrated classification
+                    </div>
+
+                </div>
+
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-label">
+                        FINANCIAL PRESSURE
+                    </div>
+
+                    <div
+                        id="financialPressure"
+                        class="kpi-value"
+                    >
+                        --
+                    </div>
+
+                    <div class="kpi-description">
+                        Current behavioral state
+                    </div>
+
+                </div>
+
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-label">
+                        SAVINGS RATE
+                    </div>
+
+                    <div
+                        id="savingsRate"
+                        class="kpi-value"
+                    >
+                        --
+                    </div>
+
+                    <div class="kpi-description">
+                        Current monthly savings
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="kpi-grid secondary">
+
+
+                <div class="mini-kpi">
+
+                    <span>
+                        MONTHLY INCOME
+                    </span>
+
+                    <strong id="income">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="mini-kpi">
+
+                    <span>
+                        TOTAL SPENDING
+                    </span>
+
+                    <strong id="spending">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="mini-kpi">
+
+                    <span>
+                        CASH BUFFER
+                    </span>
+
+                    <strong id="cashBuffer">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="mini-kpi">
+
+                    <span>
+                        INCOME VOLATILITY
+                    </span>
+
+                    <strong id="incomeVolatility">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CHART + DECISION
+             ===================================================== -->
+
+        <section class="two-column">
+
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="panel-title">
+                            Financial Trajectory
+                        </div>
+
+                        <div class="panel-subtitle">
+                            Income, spending and balance over time
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="financialChart"
+                    ></canvas>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="panel decision-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="panel-title">
+                            Decision Intelligence
+                        </div>
+
+                        <div class="panel-subtitle">
+                            Personalized intervention
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation">
+
+
+                    <div class="recommendation-label">
+                        RECOMMENDED INTERVENTION
+                    </div>
+
+
+                    <div
+                        id="intervention"
+                        class="recommendation-value"
+                    >
+                        --
+                    </div>
+
+
+                    <div
+                        id="recommendationStatus"
+                        class="recommendation-status"
+                    >
+                        --
+                    </div>
+
+
+
+                    <div class="decision-divider"></div>
+
+
+
+                    <div class="decision-stats">
+
+
+                        <div>
+
+                            <span>
+                                PRIORITY
+                            </span>
+
+                            <strong id="priority">
+                                --
+                            </strong>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                CATE
+                            </span>
+
+                            <strong id="cate">
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="evidence-box">
+
+                        <div class="evidence-title">
+                            EXPERIMENTAL EVIDENCE
+                        </div>
+
+                        <div id="cateExplanation">
+                            --
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MODEL EXPLANATION
+             ===================================================== -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <div class="panel-title">
+                        Model Explanation
+                    </div>
+
+                    <div class="panel-subtitle">
+                        Local SHAP attribution
+                    </div>
+
+                </div>
+
+
+                <div class="explain-badge">
+                    MODEL ATTRIBUTION
+                </div>
+
+            </div>
+
+
+            <div
+                id="drivers"
+                class="drivers"
+            >
+
+                <div class="empty-state">
+                    Select a user and run analysis.
+                </div>
+
+            </div>
+
+
+            <div class="disclaimer">
+                SHAP values explain model behavior and
+                should not be interpreted as causal effects.
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             BEHAVIORAL SIGNALS
+             ===================================================== -->
+
+        <section>
+
+            <div class="section-header">
+                Behavioral Signals
+            </div>
+
+
+            <div class="behavior-grid">
+
+
+                <div class="signal-card">
+
+                    <span>
+                        EXPENSE PRESSURE
+                    </span>
+
+                    <strong id="expensePressure">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="signal-card">
+
+                    <span>
+                        CASH BUFFER RATIO
+                    </span>
+
+                    <strong id="cashBufferRatio">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="signal-card">
+
+                    <span>
+                        SPENDING GROWTH
+                    </span>
+
+                    <strong id="spendingGrowth">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <div class="signal-card">
+
+                    <span>
+                        TRANSACTION ACTIVITY
+                    </span>
+
+                    <strong id="transactionActivity">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DECISION CONTEXT
+             ===================================================== -->
+
+        <section class="context-section">
+
+            <div class="section-header">
+                Decision Context
+            </div>
+
+
+            <div
+                id="decisionContext"
+                class="context-box"
+            >
+                --
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            FinSight · Predictive Financial Behavior Intelligence
+
+            <span>
+                ·
+            </span>
+
+            Calibrated HGB · SHAP · CATE
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<script
+    src="app.js"
+></script>
+
+
+</body>
+
+</html>

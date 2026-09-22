@@ -1,0 +1,13 @@
+feature,importance
+spending_growth,0.17045175373000077
+rolling_average_balance,0.1620281671140494
+cash_buffer_ratio,0.14479736759663117
+recurring_spending,0.11478540989461225
+balance_growth,0.10779763366906174
+rolling_net_cash_flow,0.08245341590126153
+spending_baseline_deviation,0.059732518660068346
+discretionary_pressure,0.04400618157172636
+transaction_count_change,0.03457174599907696
+income_volatility,0.0299340446281287
+expense_pressure,0.025892997083726003
+savings_rate,0.023548764151656725

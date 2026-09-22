@@ -1,0 +1,46 @@
+# Python
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data
+data/raw/*
+data/synthetic/full/*
+data/processed/*
+
+# Generated models
+models/trained/*
+models/artifacts/*
+models/metrics/*
+
+# Reports generated locally
+reports/figures/*
+reports/tables/*
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

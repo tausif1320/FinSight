@@ -1,0 +1,2 @@
+treatment_n,control_n,treatment_outcome_rate,control_outcome_rate,ate,relative_effect,standard_error,ci_lower,ci_upper,outcome_column
+149,151,0.18120805369127516,0.24503311258278146,-0.0638250588915063,-0.2604752403410122,0.04728414844987362,-0.15650028689290402,0.028850169109891424,synthetic_financial_stress_30d
